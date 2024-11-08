@@ -1,38 +1,46 @@
-# sv
+### Prerequisites
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Ensure that you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
 
-## Creating a project
+### Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Clone the repository to your local machine:
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+git clone https://github.com/asilor/medusa-storefront
 ```
 
-## Developing
+2. Navigate to the project directory:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+cd medusa-storefront
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root of the project directory. Add the necessary environment variables.
+
+```plaintext
+VITE_MEDUSA_BACKEND_URL=
+VITE_MEDUSA_PUBLISHABLE_KEY=
+```
+
+### Running in Development
+
+Start the development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+This will start the application at http://localhost:5173.
 
-To create a production version of your app:
+### Deployment
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+By commiting the changes the application will be automatically deployed.
