@@ -3,5 +3,5 @@
   let product = $derived(data.response.product);
 </script>
 
-<img src={product.thumbnail} alt="Product" class="w-80">
-<h1>{product.title}</h1>
+<h1 class="text-3xl font-medium">{product.title}</h1>
+<img src={product.thumbnail} alt={product.title}>
