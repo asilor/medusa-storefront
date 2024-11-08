@@ -41,8 +41,12 @@
   });
 </script>
 
+<svelte:head>
+  <title>Asilor ― Buy Online Electronics, Fashion, Sports, Home</title>
+</svelte:head>
+
 {#each products as product}
-  <a href={`/${product.slug}-${product.id.replace(/^prod_/, '')}`}>
+  <a href={`/${product.handle}-${product.id.replace(/^prod_/, '')}`}>
     <img src={product.thumbnail} alt={product.title} class="rounded w-80">
     <h2>{product.title}</h2>
   </a>
