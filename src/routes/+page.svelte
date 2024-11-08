@@ -1,11 +1,12 @@
 <script>
   import { medusa } from "$lib/medusa";
+  import ProductCard from "$lib/components/ProductCard.svelte";
   
   let { data } = $props();
   let products = $state(data.response.products);
   let limit = $state(data.response.limit);
   let offset = $state(data.response.offset);
-  
+
   const loadLimit = 4;
   let loadCount = $state(0);
   let autoLoad = $derived(loadCount < loadLimit);
@@ -45,12 +46,11 @@
   <title>Asilor ― Buy Online Electronics, Fashion, Sports, Home</title>
 </svelte:head>
 
-{#each products as product}
-  <a href={`/${product.handle}-${product.id.replace(/^prod_/, '')}`}>
-    <img src={product.thumbnail} alt={product.title} class="rounded w-80">
-    <h2>{product.title}</h2>
-  </a>
-{/each}
+<section class="grid grid-cols-2 gap-2 lg:gap-6 lg:grid-cols-5 md:gap-4 md:grid-cols-4 sm:grid-cols-3">
+  {#each products as product}
+    <ProductCard {product} />
+  {/each}
+</section>
 
 <div class="my-8 text-center" bind:this={sentinel}>
   {#if autoLoad}
