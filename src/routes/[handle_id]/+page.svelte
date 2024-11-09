@@ -1,8 +1,10 @@
 <script>
+  import ProductImages from "$lib/components/ProductImages.svelte";
   import ProductsGrid from "$lib/components/ProductsGrid.svelte";
 
   let { data } = $props();
   let product = $derived(data.response.product);
+  let images = $derived(product.images);
 
   const response = {
     "limit": 0,
@@ -18,7 +20,7 @@
 
 <section class="grid md:grid-cols-5 gap-x-8 gap-y-2">
   <div class="col-span-3">
-    <img src={product.thumbnail} alt={product.title}>
+    <ProductImages {images} />
   </div>
   <div class="w-full col-span-2 space-y-2">
     
