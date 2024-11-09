@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-500: #f73b51;
+  --color-primary-600: #ff001f;
+}
+
 img {
   -webkit-user-drag: none;
 }
