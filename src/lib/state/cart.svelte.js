@@ -45,6 +45,15 @@ function createCart() {
     cart = response.cart;
   }
 
+  async function updateItem(itemId, quantity) {
+    const cartId = await getCartId();
+    const { cart: updatedCart } = await medusa(fetch, `carts/${cartId}/line-items/${itemId}`, {
+      method: "POST",
+      body: { quantity }
+    });
+    cart = updatedCart;
+  }
+
   async function removeItem(itemId) {
     const cartId = await getCartId();
     const response = await medusa(fetch, `carts/${cartId}/line-items/${itemId}`, {
@@ -69,6 +78,7 @@ function createCart() {
     createCart,
     retrieveCart,
     addToCart,
+    updateItem,
     removeItem,
   };
 }

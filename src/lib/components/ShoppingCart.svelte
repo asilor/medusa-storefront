@@ -12,7 +12,11 @@
             <p class="text-sm text-neutral-600">Color: Gray</p>
             <p class="text-sm text-neutral-600">Size: S</p>
             <div class="flex pt-1 space-x-2">
-                <select class="rounded-sm cursor-pointer border-neutral-300" bind:value={item.quantity} >
+                <select 
+                    class="rounded-sm cursor-pointer border-neutral-300" 
+                    bind:value={item.quantity}
+                    onchange={() => cart.updateItem(item.id, item.quantity)}
+                >
                     {#each Array(20).fill(0).map((_, i) => i + 1) as quantity}
                         <option value={quantity}>{quantity}</option>
                     {/each}
