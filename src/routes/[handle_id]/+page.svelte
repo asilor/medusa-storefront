@@ -1,10 +1,12 @@
 <script>
+  import { cart } from "$lib/state/cart.svelte";
   import ProductImages from "$lib/components/ProductImages.svelte";
   import ProductsGrid from "$lib/components/ProductsGrid.svelte";
 
   let { data } = $props();
   let product = $derived(data.response.product);
   let images = $derived(product.images);
+  let quantity = $state(1);
 
   const response = {
     "limit": 0,
@@ -82,6 +84,7 @@
     <div class="fixed bottom-0 left-0 right-0 p-4 pt-0 bg-white md:relative md:p-0">
       <button
         class="w-full px-8 py-1 text-lg text-white rounded bg-primary-600 hover:bg-primary-500 active:scale-95 md:w-auto"
+        onclick={() => cart.addToCart(product.variants[0].id, quantity)}
         >Add to Cart</button
       >
     </div>

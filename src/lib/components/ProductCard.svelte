@@ -1,5 +1,8 @@
 <script>
+  import { cart } from "$lib/state/cart.svelte";
   let { product } = $props();
+
+  let quantity = $state(1);
 </script>
 
 <div class="space-y-2 rounded hover:scale-105">
@@ -39,7 +42,12 @@
     <li>Deliveprimary on Friday 25</li>
     <li>Elegible for Free Shipping</li>
   </ul>
-  <button class="px-5 text-lg text-white rounded cursor-pointer bg-primary-600 hover:bg-primary-500 active:scale-95">Add to Cart</button>
+  <button 
+    onclick={() => cart.addToCart(product.variants[0].id, quantity)}
+    class="px-5 text-lg text-white rounded cursor-pointer bg-primary-600 hover:bg-primary-500 active:scale-95"
+  >
+    Add to Cart
+  </button>
   <div>
     <p class="text-lg text-primary-600">Out of Stock</p>
     <p class="text-sm">Expected back in 1 week</p>
