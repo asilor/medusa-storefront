@@ -1,10 +1,14 @@
 <script>
     import { cart } from "$lib/state/cart.svelte";
+
+    $effect(() => {
+        console.log(cart.items);
+    });
 </script>
 
 {#snippet cartItem(item)}
     <li class="flex items-center space-x-3">
-        <a href="/product-slug-{item.id}" class="w-20">
+        <a href={`/${item.product_handle}-${item.product_id.replace(/^prod_/, '')}`} class="w-20">
             <img src={item.thumbnail} alt="Cart Item">
         </a>
         <div>
@@ -18,7 +22,7 @@
                     {/each}
                 </select>
                 <button 
-                    onclick={() => cart.removeItem("cali_01JC9VST7X46E36SXM853E86QR")}
+                    onclick={() => cart.removeItem(item.id)}
                     class="border rounded-sm p-[1px] border-neutral-300 hover:bg-neutral-100 cursor-pointer"
                     aria-label="Remove item"
                 >
