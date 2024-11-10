@@ -8,7 +8,7 @@
   let limit = $state(response.limit);
   let offset = $state(response.offset);
 
-  const loadLimit = 4;
+  const loadLimit = 8;
   let loadCount = $state(0);
   let autoLoad = $derived(loadCount < loadLimit);
   let sentinel;
@@ -48,9 +48,9 @@
   {/each}
 </section>
 
-<div class="my-8 text-center" bind:this={sentinel}>
+<div class="my-10 text-center" bind:this={sentinel}>
   {#if autoLoad}
-    <div class="w-8 h-8 mx-auto border-2 rounded-full border-neutral-300 border-l-white spin"></div>
+    <div class="w-8 h-8 mx-auto border-3 rounded-full border-neutral-300 border-l-white spin"></div>
   {:else}
     <button class="px-5 text-lg text-white bg-black rounded hover:bg-neutral-800" onclick={resetLoad}>Load more</button>
   {/if}
