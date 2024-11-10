@@ -47,10 +47,10 @@ function createCart() {
 
   async function removeItem(itemId) {
     const cartId = await getCartId();
-    const response = await medusa(fetch, `carts/${cartId}/line-items/${itemId}`,{
+    const response = await medusa(fetch, `carts/${cartId}/line-items/${itemId}`, {
       method: "DELETE",
     });
-    cart = response.cart;
+    cart = response.parent;
   }
 
   return {

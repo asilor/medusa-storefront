@@ -1,9 +1,5 @@
 <script>
     import { cart } from "$lib/state/cart.svelte";
-
-    $effect(() => {
-        console.log(cart.items);
-    });
 </script>
 
 {#snippet cartItem(item)}
