@@ -4,13 +4,10 @@
 	import Footer from "$lib/components/Footer.svelte";
 	import ShoppingCart from "$lib/components/ShoppingCart.svelte";
 
-	import '../app.css';
+	import "../app.css";
 	let { children } = $props();
 
-	$effect(async () => {
-		const cardId = localStorage.getItem("cart_id");
-    	if (cardId) await cart.retrieveCart(cardId);
-	});
+	$effect(() => cart.retrieveCart());
 </script>
 
 <div class={cart.open ? "lg:mr-52" : "mr-0"}>

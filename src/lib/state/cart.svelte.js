@@ -20,18 +20,18 @@ function createCart() {
     localStorage.setItem("cart_id", cart.id);
   }
 
-  async function retrieveCart(cartId) {
-    const response = await medusa(fetch, `carts/${cartId}`);
-    cart = response.cart;
+  async function retrieveCart() {
+    const cartId = localStorage.getItem("cart_id");
+    if (cartId) {
+      const response = await medusa(fetch, `carts/${cartId}`);
+      cart = response.cart;
+    }
   }
 
   async function getCartId() {
     if (cart.id) return cart.id;
     const cartId = localStorage.getItem("cart_id");
-    if (cartId) {
-      await retrieveCart(cartId);
-      return cart.id;
-    }
+    if (cartId) return cartId;
     await createCart();
     return cart.id;
   }
@@ -46,8 +46,7 @@ function createCart() {
   }
 
   async function updateItem(itemId, quantity) {
-    const cartId = await getCartId();
-    const { cart: updatedCart } = await medusa(fetch, `carts/${cartId}/line-items/${itemId}`, {
+    const { cart: updatedCart } = await medusa(fetch, `carts/${cart.id}/line-items/${itemId}`, {
       method: "POST",
       body: { quantity }
     });
@@ -55,8 +54,7 @@ function createCart() {
   }
 
   async function removeItem(itemId) {
-    const cartId = await getCartId();
-    const response = await medusa(fetch, `carts/${cartId}/line-items/${itemId}`, {
+    const response = await medusa(fetch, `carts/${cart.id}/line-items/${itemId}`, {
       method: "DELETE",
     });
     cart = response.parent;
