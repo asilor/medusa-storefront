@@ -6,6 +6,8 @@ function createCart() {
     id: null,
     items: [],
     total: 0,
+    subtotal: 0,
+    tax_total: 0,
   });
 
   let open = $derived(cart.items.length > 0);
@@ -66,6 +68,12 @@ function createCart() {
     },
     get total() {
       return cart.total;
+    },
+    get subtotal() {
+      return cart.subtotal;
+    },
+    get tax_total() {
+      return cart.tax_total;
     },
     get open() {
       return open;

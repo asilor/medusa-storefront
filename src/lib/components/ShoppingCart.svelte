@@ -9,8 +9,7 @@
         </a>
         <div>
             <span class="text-lg font-medium">{item.unit_price}€</span>
-            <p class="text-sm text-neutral-600">Color: Gray</p>
-            <p class="text-sm text-neutral-600">Size: S</p>
+            <p class="text-neutral-600">{item.variant_title}</p>
             <div class="flex pt-1 space-x-2">
                 <select 
                     class="rounded-sm cursor-pointer border-neutral-300" 
@@ -45,11 +44,11 @@
         <div>
             <div class="flex justify-between text-lg">
                 <span>Subtotal:</span>
-                <span class="font-medium">{cart.total}€</span>
+                <span class="font-medium">{cart.subtotal}€</span>
             </div>
             <div class="flex justify-between text-sm text-neutral-600">
                 <span>Included VAT:</span>
-                <span>0€</span>
+                <span>{cart.tax_total}€</span>
             </div>
         </div>
         <a href="/checkout">
