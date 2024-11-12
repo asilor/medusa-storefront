@@ -52,6 +52,6 @@
   {#if autoLoad}
     <div class="w-8 h-8 mx-auto border-3 rounded-full border-neutral-300 border-l-white spin"></div>
   {:else}
-    <button class="px-5 text-lg text-white bg-black rounded hover:bg-neutral-800" onclick={resetLoad}>Load more</button>
+    <button class="px-5 text-lg text-white bg-black rounded hover:bg-neutral-800 cursor-pointer" onclick={resetLoad}>Load more</button>
   {/if}
 </div>
