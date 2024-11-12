@@ -52,7 +52,7 @@
             </div>
         </div>
         <a href="/checkout">
-            <button class="w-full px-5 py-1 text-lg text-white rounded bg-primary-600 hover:bg-primary-500 active:scale-95 cursor-pointer">Checkout {cart.num_items}</button>
+            <button class="w-full px-5 py-1 text-lg text-white rounded bg-primary-600 hover:bg-primary-500 active:scale-95 cursor-pointer">Checkout ({cart.num_items})</button>
         </a>
     </div>
 </div>
