@@ -10,6 +10,10 @@
 
   let selectedOptVals = $state({});
 
+  $effect(() => selectedOptVals = Object.fromEntries(
+    product.options.map(option => [option.id, option.values[0].id])
+  ));
+
   let selectedVariant = $derived(product.variants.find(variant =>
     variant.options.every(option => selectedOptVals[option.option_id] === option.id)
   ));
