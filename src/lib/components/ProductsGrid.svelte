@@ -2,7 +2,7 @@
   import { medusa } from "$lib/medusa";
   import ProductCard from "$lib/components/ProductCard.svelte";
 
-  let { response } = $props();
+  let { response = {"limit": 0, "offset": 0, "count": 0, "products": []} } = $props();
 
   let products = $state(response.products);
   let limit = $state(response.limit);
