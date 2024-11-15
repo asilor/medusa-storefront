@@ -44,7 +44,7 @@
       <span>Flash sale</span>
     </div>
 
-    <h1 class="text-2xl font-medium">{product.title}</h1>
+    <h1 class="text-3xl font-medium">{product.title}</h1>
 
     <div class="flex items-start">
       <span class="text-2xl">155.23</span>
@@ -79,25 +79,27 @@
 
     <div class="space-y-4">
       {#each product.options as option}
-        <div>
-          <h3 class="font-medium mb-2">{option.title}</h3>
-          <div class="flex space-x-2">
-            {#each option.values as value}
-              <button
-                class="px-4 py-1 border rounded-sm cursor-pointer {selectedOptVals[option.id] === value.id ? "border-black" : "border-neutral-300"}"
-                onclick={() => selectOption(option.id, value.id)}
-              >
-                {value.value}
-              </button>
-            {/each}
+        {#if option.values.length > 1}
+          <div>
+            <h3 class="font-medium mb-2">{option.title}</h3>
+            <div class="flex space-x-2">
+              {#each option.values as value}
+                <button
+                  class="px-4 py-1 border rounded-sm cursor-pointer {selectedOptVals[option.id] === value.id ? "border-black" : "border-neutral-300"}"
+                  onclick={() => selectOption(option.id, value.id)}
+                >
+                  {value.value}
+                </button>
+              {/each}
+            </div>
           </div>
-        </div>
+        {/if}
       {/each}
     </div>
 
-    <div class="fixed bottom-0 left-0 right-0 p-4 pt-0 bg-white md:relative md:p-0">
+    <div class="fixed flex space-x-2 bottom-0 left-0 right-0 p-4 pt-0 bg-white md:relative md:p-0">
       <select 
-        class="rounded-sm cursor-pointer border-neutral-300" 
+        class="rounded-sm cursor-pointer border-neutral-300 pl-1 py-1 text-lg"
         bind:value={quantity}
       >
         {#each Array(20).fill(0).map((_, i) => i + 1) as quantity}
@@ -106,7 +108,7 @@
       </select>
 
       <button
-        class="w-full px-8 py-1 text-lg text-white rounded bg-primary-600 hover:bg-primary-500 active:scale-95 md:w-auto cursor-pointer"
+        class="grow md:flex-none px-8 py-1 text-lg text-white rounded bg-primary-600 hover:bg-primary-500 active:scale-95 md:w-auto cursor-pointer"
         onclick={addToCart}
       >
         Add to Cart
