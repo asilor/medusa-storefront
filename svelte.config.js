@@ -5,6 +5,10 @@ const config = {
   kit: {
     adapter: adapter(),
     appDir: "bundle",
+    files: {
+      assets: 'static'
+    },
+    outDir: "dev",
     output: {
       bundleStrategy: "split",
     },
