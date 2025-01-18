@@ -1,6 +1,5 @@
 <script>
     import { assets } from "$app/paths";
-
     import SearchBar from "$lib/components/SearchBar.svelte";
 
     let openMenu = $state(false);

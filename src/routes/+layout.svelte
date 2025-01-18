@@ -1,5 +1,5 @@
 <script>
-	import { cart } from "$lib/state/cart.svelte.js";
+	import { cart } from "$lib/state/cart.svelte";
 	import Header from "$lib/components/Header.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import ShoppingCart from "$lib/components/ShoppingCart.svelte";
