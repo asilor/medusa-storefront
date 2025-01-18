@@ -14,7 +14,7 @@ const config = {
     },
     paths: {
       base: "",
-      assets: "https://cdn.asilor.com/static",
+      assets: "",
     },
   },
 };
