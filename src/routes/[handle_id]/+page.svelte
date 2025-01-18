@@ -108,7 +108,7 @@
       </select>
 
       <button
-        class="grow md:flex-none px-8 py-1 text-lg text-white rounded bg-primary-600 hover:bg-primary-500 active:scale-95 md:w-auto cursor-pointer"
+        class="grow md:flex-none px-8 py-1 text-lg text-white rounded-full bg-primary-600 hover:bg-primary-500 active:scale-95 md:w-auto cursor-pointer"
         onclick={addToCart}
       >
         Add to Cart

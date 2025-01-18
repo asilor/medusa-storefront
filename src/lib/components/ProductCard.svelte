@@ -50,7 +50,7 @@
   </ul>
   <button 
     onclick={() => cart.addToCart(product.variants[0].id, quantity)}
-    class="px-5 text-lg text-white rounded cursor-pointer bg-primary-600 hover:bg-primary-500 active:scale-95"
+    class="px-5 text-lg text-white rounded-full cursor-pointer bg-primary-600 hover:bg-primary-500 active:scale-95"
   >
     Add to Cart
   </button>
