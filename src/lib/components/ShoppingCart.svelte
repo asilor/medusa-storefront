@@ -1,5 +1,7 @@
 <script>
     import { cart } from "$lib/state/cart.svelte";
+
+    $effect(() => cart.retrieveCart());
 </script>
 
 {#snippet cartItem(item)}

@@ -6,8 +6,6 @@
 
 	import "../app.css";
 	let { children } = $props();
-
-	$effect(() => cart.retrieveCart());
 </script>
 
 <div class={cart.open ? "lg:mr-52" : "mr-0"}>
