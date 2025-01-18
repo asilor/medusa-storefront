@@ -4,7 +4,7 @@
 
 {#snippet cartItem(item)}
     <li class="flex items-center space-x-3">
-        <a href={`/${item.product_handle}-${item.product_id.replace(/^prod_/, '')}`} class="w-20">
+        <a href={`/p/${item.product_handle}-${item.product_id.replace(/^prod_/, '')}`} class="w-20">
             <img src={item.thumbnail} alt="Cart Item">
         </a>
         <div>

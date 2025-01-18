@@ -12,10 +12,10 @@
     </svg>
     <span>Flash sale</span>
   </div>
-  <a href={`/${product.handle}-${product.id.replace(/^prod_/, '')}`} tabindex="-1">
+  <a href={`/p/${product.handle}-${product.id.replace(/^prod_/, '')}`} tabindex="-1">
     <img src="{product.thumbnail}" alt="{product.title}" class="bg-neutral-100" width="400px" height="271px" />
   </a>
-  <a href={`/${product.handle}-${product.id.replace(/^prod_/, '')}`}>
+  <a href={`/p/${product.handle}-${product.id.replace(/^prod_/, '')}`}>
     <h2 class="py-2 leading-tight">{product.title}</h2>
   </a>
   <div class="flex items-start">
