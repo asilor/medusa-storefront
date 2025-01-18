@@ -1,4 +1,6 @@
 <script>
+    import { assets } from "$app/paths";
+
     import SearchBar from "$lib/components/SearchBar.svelte";
 
     let openMenu = $state(false);
@@ -42,7 +44,7 @@
     <nav class="container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between p-3 sm:px-6 pb-2 sm:py-4">
         <div class="flex flex-row-reverse md:flex-row items-center">
             <a href="/" alt="Asilor">
-                <img src="https://cdn.asilor.com/asilor-logo-white.svg" alt="Asilor Logo" width="125" height="30">
+                <img src="{assets}/logos/asilor-logo-white.svg" alt="Asilor Logo" width="125" height="30">
             </a>
             {@render menuToggle()}
         </div>

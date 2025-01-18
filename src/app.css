@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://cdn.asilor.com/inter-regular-latin.woff2") format("woff2");
+  src: url("https://cdn.asilor.com/fonts/inter-regular-latin.woff2") format("woff2");
 }
 
 @font-face {
@@ -20,11 +20,11 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("https://cdn.asilor.com/inter-medium-latin.woff2") format("woff2");
+  src: url("https://cdn.asilor.com/fonts/inter-medium-latin.woff2") format("woff2");
 }
 
 body {
-  @apply font-inter;
+  font-family: var(--font-family-inter);
 }
 
 img {
