@@ -5,6 +5,6 @@ export function GET() {
 `User-agent: *
 Allow: /
 
-Sitemap: https://asilor.com/sitemap.xml`
+Sitemap: https://api.asilor.com/sitemaps/sitemap.xml`
   );
 }
